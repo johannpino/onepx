@@ -1,0 +1,10 @@
+<h1><%= t('.title') %></h1>
+
+<%- if identity_signed_in?%>
+<p>
+  <%= link_to t('.new_link'), new_image_path %>
+</p>
+<% end %>
+<div class="images">
+  <%= render @image%>
+</div>

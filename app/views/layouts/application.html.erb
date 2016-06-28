@@ -7,8 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+  <div class="user">
+    <%- if identity_signed_in? %>
+          <span> Hola ! <%= current_identity.email %></span>
+          <%= link_to 'Cerrar Sesión', log_out_path, method: :delete %>
+    <%- else %>
+      <%= link_to 'Iniciar Sesión', log_in_path %> |
+      <%= link_to 'Crear cuenta', sign_up_path %>
+    <% end %>
+  </div>
+  <div class="flash">
+    <% flash.each do |key, value| -%>
+      <div id="flash-<%= key %>">
+        <%= value %>
+      </div>
+    <% end %>
+    </div>
+  <%= yield %>
 
 </body>
 </html>

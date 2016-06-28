@@ -1,0 +1,32 @@
+<%- model_name = @image.class.model_name.human %>
+
+<h1><%= t('.title', model: model_name) %></h1>
+
+<%= form_for @image, html: { class: 'pure-form pure-form-aligned' },  builder: CustomFormBuilder do |f| %>
+<%= f.form_error %>
+<div class="pure-control-group">
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.field_error :name %>
+
+</div>
+<div class="pure-control-group">
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+</div>
+<div class="pure-control-group">
+  <%= f.label :category %>
+  <%= f.collection_select :category, images_categories, :last, :first %>
+</div>
+<div class="pure-control-group">
+  <%= f.label :tags_text %>
+  <%= f.text_field :tags_text %>
+</div>
+<div class="pure-control-group">
+  <%= f.label :photo %>
+  <%= f.file_field :photo %>
+</div>
+<div class="pure-controls">
+  <%= f.submit class: 'pure-button pure-button-primary'%>
+</div>
+<% end%>

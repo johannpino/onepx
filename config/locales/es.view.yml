@@ -1,0 +1,20 @@
+es:
+  categories:
+    portrait: "Retrato"
+    landscape: "Panorama"
+    city_exploration: "Explorando la Ciudad"
+    nature: "Naturaleza"
+    animals: "Animales"
+
+  images:
+    index:
+      title: "Imagenes"
+      new_link: "Nueva Imágen"
+
+    new:
+      title: "Nueva %{model}"
+      form:
+        error: "Ha ocurrido un error al intertar crear la %{model}"
+
+    create:
+      created: "La %{model} ha sido creada"
